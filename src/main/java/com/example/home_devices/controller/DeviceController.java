@@ -49,7 +49,7 @@ public class DeviceController {
 
     // DeviceController.java içine ekle
     @DeleteMapping("/{id}") // URL: http://localhost:8080/api/devices/1
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable String id) {
         deviceService.deleteDevice(id);
         return id + " numaralı cihaz başarıyla silindi.";
     }

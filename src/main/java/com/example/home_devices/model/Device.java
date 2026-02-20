@@ -1,7 +1,12 @@
 package com.example.home_devices.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "devices")
 public class Device {
-    private Long id;
+    @Id
+    private String id;
     private String name;     // "Salon Lambası"
     private String type;     // "LIGHT", "AC", "TV"
     private boolean status;   // true: açık, false: kapalı
@@ -10,14 +15,14 @@ public class Device {
     public Device() {
     }
 
-    public Device(Long id, String name, String type, boolean status) {
+    public Device(String id, String name, String type, boolean status) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.status = status;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -29,7 +34,7 @@ public class Device {
         return name;
     }
 
-    public Long getId(){
+    public String getId(){
         return id;
     }
 

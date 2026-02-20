@@ -32,10 +32,14 @@ public class DeviceService {
 
 
 
-    public void deleteDevice(Long id) {
-        deviceRepository.findById(id)
-                .orElseThrow(() -> new DeviceNotFoundException("Cihaz bulunamadı! ID: " + id));
+//    public void deleteDevice(Long id) {
+//        deviceRepository.findById(id)
+//                .orElseThrow(() -> new DeviceNotFoundException("Cihaz bulunamadı! ID: " + id));
+//
+//        deviceRepository.deleteById(id);
+//    }
 
+    public void deleteDevice(String id) { // Long yerine String
         deviceRepository.deleteById(id);
     }
 

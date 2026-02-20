@@ -1,7 +1,10 @@
 package com.example.home_devices.dto;
 
+import org.springframework.data.annotation.Id;
+
 public class DeviceRequest {
-    private Long id;
+    @Id
+    private String id;
     private String name;
     private String type;
 
@@ -12,11 +15,11 @@ public class DeviceRequest {
         return name;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(String id){
         this.id = id;
     }
 
